@@ -1,0 +1,1719 @@
+/* ===== Typography Maker - Modern Black & White Design ===== */
+
+/* 눈누 폰트 */
+@font-face { font-family: 'Pretendard-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Paperlogy-8ExtraBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'memomentKkukKkuk'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/memomentKkukKkuk.woff2') format('woff2'); font-weight: normal; }
+@font-face { font-family: 'NEXON Lv1 Gothic OTF'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff'); }
+@font-face { font-family: 'KoPubDotumMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff'); }
+@font-face { font-family: 'yg-jalnan'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); }
+@font-face { font-family: 'SBAggroB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff'); font-weight: 700; }
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: 300; }
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@font-face { font-family: 'ZEN-SERIF-TTF-Regular'; src: url('https://cdn.noonnu.cc/fonts/ZEN-SERIF-TTF-Regular.ttf') format('truetype'); }
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+@font-face { font-family: 'PartialSansKR-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Ownglyph_ParkDaHyun'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2'); }
+@font-face { font-family: 'Freesentation-9Black'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2'); font-weight: 900; }
+@font-face { font-family: 'SUIT-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Cafe24Ssurround'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff'); }
+@font-face { font-family: '양진체'; src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff'); }
+@font-face { font-family: 'ChosunGs'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff'); }
+@font-face { font-family: 'GowunDodum-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff'); }
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+@font-face { font-family: 'HakgyoansimDunggeunmisoTTF-B'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'LeeSeoyun'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff'); }
+@font-face { font-family: 'GongGothicMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff'); }
+@font-face { font-family: 'Godo'; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'GodoMaum'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/godoMaum.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'SDKukdetopokki'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDKukdetopokki.woff') format('woff'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'SDKukdetopokki-Lt'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SDKukdetopokki-aLt00.woff') format('woff'); font-weight: 300; font-display: swap; }
+@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+@font-face { font-family: 'Binggrae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Binggrae-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'SejongJaeumiMoeumi-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-3@1.0/SejongJaeumiMoeumi-Bold.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'NYJGothicEB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/NYJGothicEB.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'KJD2Beol'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/KJD2Beol.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'HSJandari'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/HSJandari.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'KNPSOdaesan-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/KNPSOdaesan-Regular.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'NYJDasanB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/NYJDasanB.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'NYJUnheo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/NYJUnheo.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'ClipartkoreaTTF-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/ClipartkoreaTTF-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'YeolrinMyeongjo-Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/YeolrinMyeongjo-Medium.woff') format('woff'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'KimjungchulMyungjo-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'BookkMyungjo-Bd'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Eulyoo1945-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/Eulyoo1945-Regular.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'MaruBuri'; src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'YESMyoungjo-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'GowunBatang-Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'SunBatang-Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff') format('woff'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'NoonnuBasicGothicRegular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noon-2410@1.0/NoonnuBasicGothicRegular.woff2') format('woff2'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'PyeojinGothic-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@import url('https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+@font-face { font-family: 'TheJamsil5Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'SeoulAlrimTTF-Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Heavy.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+@font-face { font-family: 'TillVictoryComes'; src: url('https://cdn.jsdelivr.net/gh/tillvictorycomes/TillVictoryComes-font/tillvictorycomes-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+@font-face { font-family: 'KHNPHD'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHD.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: 'KHNPHU'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHU.woff') format('woff'); font-weight: normal; font-display: swap; }
+@font-face { font-family: '둥근모꼴체'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/dunggeunmo/DungGeunMo.woff2') format('woff2'); }
+
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Top Menu Bar ===== */
+.top-menu {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    background: #1a1a1a;
+    padding: 0 20px;
+    border-bottom: 1px solid #2a2a2a;
+    flex-shrink: 0;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.logo img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #d0d0d0;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.menu-icon-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: #d0d0d0;
+    font-size: 1rem;
+}
+
+.logo ~ .menu-icon-btn:first-of-type {
+    margin-left: auto;
+}
+
+.menu-icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* ===== Main Container ===== */
+.main-container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* ===== Left Panel ===== */
+.left-panel {
+    width: 280px;
+    background: #1a1a1a;
+    border-right: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.panel-header {
+    padding: 16px 18px;
+    background: #1f1f1f;
+    border-bottom: 1px solid #2a2a2a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.panel-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Panel Tabs */
+.panel-tabs {
+    display: flex;
+    background: #1f1f1f;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #d0d0d0;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tab-btn.active {
+    color: #fff;
+    background-color: #242424;
+    border-bottom-color: #fff;
+}
+
+.tab-content {
+    display: none;
+    padding: 16px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Asset Section */
+.asset-section {
+    margin-bottom: 24px;
+}
+
+.asset-section h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #b8b8b8;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.asset-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.asset-section-header h3 {
+    margin-bottom: 0;
+}
+
+.asset-section-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.more-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.more-btn:hover {
+    color: #fff;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid #2a2a2a;
+    color: #b8b8b8;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.back-btn:hover {
+    background-color: #242424;
+    border-color: #3a3a3a;
+    color: #fff;
+}
+
+.asset-detail-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-asset-btn {
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e8e8e8;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.add-asset-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.asset-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.asset-item {
+    padding: 12px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #b8b8b8;
+}
+
+/* Camera Keyframe Items */
+.camera-keyframe-item {
+    background: #242424;
+    border-color: #2a2a2a;
+}
+
+.camera-keyframe-item i {
+    color: #b8b8b8;
+}
+
+.camera-keyframe-item:hover {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    transform: none;
+}
+
+.camera-keyframe-item:hover i {
+    color: #e0e0e0;
+}
+
+/* 카메라 키프레임 마커 */
+.camera-keyframe-marker {
+    position: absolute;
+    /* top은 JS에서 값에 따라 동적으로 설정됨 */
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: #00a8ff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    box-shadow: none;
+}
+
+.camera-keyframe-marker:hover,
+.camera-keyframe-marker.hover {
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #00c3ff;
+    border-color: #00c3ff;
+}
+
+.camera-keyframe-marker.selected {
+    background: #ffaa00;
+    border-color: #ffcc00;
+}
+
+/* 카메라 그래프 곡선 */
+.camera-graph-curve {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.asset-item:hover {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.asset-item i {
+    font-size: 1.2rem;
+}
+
+/* Image Assets */
+.image-assets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.image-asset-item--add {
+    aspect-ratio: 1;
+    border: 2px dashed #2a2a2a;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 10px;
+}
+
+.image-asset-item--add:hover,
+.image-asset-item--add.dragover {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.image-asset-item--add i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.image-asset-item--add span {
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+.image-asset-item {
+    position: relative;
+    aspect-ratio: 1;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.image-asset-item:hover {
+    border-color: #fff;
+    transform: translateY(-1px);
+}
+
+.image-asset-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-asset-item .delete-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.image-asset-item:hover .delete-btn {
+    display: flex;
+}
+
+/* Layers List */
+.layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.layer-item {
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.layer-item:hover {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+.layer-item.selected {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+.layer-item i {
+    color: #888;
+    font-size: 1rem;
+}
+
+.layer-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.layer-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #e8e8e8;
+}
+
+.layer-time {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.empty-message {
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+    padding: 20px;
+}
+
+/* ===== Properties Panel (in left panel) ===== */
+#noSelectionMessage {
+    display: block;
+    padding: 0;
+}
+
+.property-section {
+    margin-bottom: 20px;
+}
+
+.property-section h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #b8b8b8;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.setting-group {
+    margin-bottom: 14px;
+}
+
+.setting-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.setting-group input[type="text"],
+.setting-group input[type="number"],
+.setting-group select {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #e8e8e8;
+    font-size: 0.85rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.setting-group input[type="text"]:focus,
+.setting-group input[type="number"]:focus,
+.setting-group select:focus {
+    border-color: #fff;
+    background-color: #2a2a2a;
+}
+
+.setting-group input[type="color"] {
+    width: 100%;
+    height: 36px;
+    padding: 2px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.setting-group input[type="color"]:hover {
+    border-color: #3a3a3a;
+}
+
+/* Animation Group Styles */
+.anim-group {
+    margin-bottom: 16px;
+    padding: 10px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    border: 1px solid #2a2a2a;
+}
+
+.anim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.anim-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #b8b8b8;
+    font-weight: 500;
+    margin: 0;
+}
+
+.anim-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.anim-input {
+    flex: 1;
+    padding: 6px 8px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    color: #e8e8e8;
+    font-size: 0.8rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+    min-width: 0;
+}
+
+.anim-input:focus {
+    border-color: #fff;
+    background-color: #2a2a2a;
+}
+
+.anim-input::placeholder {
+    color: #555;
+    font-size: 0.75rem;
+}
+
+.anim-arrow {
+    color: #555;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.anim-easing {
+    flex: 1.2;
+    padding: 6px 8px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    color: #e8e8e8;
+    font-size: 0.75rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+    cursor: pointer;
+}
+
+.anim-easing:focus {
+    border-color: #fff;
+    background-color: #2a2a2a;
+}
+
+.anim-easing option {
+    background-color: #1a1a1a;
+    color: #e8e8e8;
+}
+
+.anim-easing-header {
+    padding: 4px 8px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    color: #e8e8e8;
+    font-size: 0.7rem;
+    outline: none;
+    transition: border-color 0.15s ease;
+    cursor: pointer;
+}
+
+.anim-easing-header:focus {
+    border-color: #fff;
+    background-color: #2a2a2a;
+}
+
+.anim-easing-header option {
+    background-color: #1a1a1a;
+    color: #e8e8e8;
+}
+
+.anim-graph {
+    width: 100%;
+    height: 100px;
+    margin: 8px 0;
+    background: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    cursor: crosshair;
+    display: block;
+}
+
+.anim-graph:hover {
+    border-color: #3a3a3a;
+}
+
+.style-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.style-toggle {
+    flex: 1;
+    padding: 8px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.style-toggle:hover {
+    background-color: #2a2a2a;
+    color: #e8e8e8;
+}
+
+.style-toggle.active {
+    background-color: #fff;
+    color: #0d0d0d;
+    border-color: #fff;
+}
+
+.color-with-alpha {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.color-with-alpha input[type="color"] {
+    flex: 1;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: #888;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* File Select Button */
+.file-select-btn {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #242424;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    color: #e8e8e8;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-select-btn:hover {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+.file-select-btn i {
+    font-size: 0.9rem;
+}
+
+.file-select-btn span {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Volume Control */
+.volume-control-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-control-container input[type="range"] {
+    flex: 1;
+    height: 6px;
+    background: #2a2a2a;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-control-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.volume-control-container input[type="range"]::-webkit-slider-thumb:hover {
+    background: #e8e8e8;
+    transform: scale(1.1);
+}
+
+.volume-control-container input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.volume-control-container input[type="range"]::-moz-range-thumb:hover {
+    background: #e8e8e8;
+    transform: scale(1.1);
+}
+
+.volume-value {
+    font-size: 0.8rem;
+    color: #888;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* ===== Center Area ===== */
+.center-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+    --timeline-height: 320px;
+    --resizer-height: 2px;
+}
+
+/* ===== Resizers ===== */
+.resizer {
+    background: #2a2a2a;
+    z-index: 100;
+    transition: background 0.2s ease;
+    position: relative; /* ::before 위치 기준 */
+}
+
+/* 드래그 영역 보정 */
+.resizer::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: transparent;
+}
+
+.resizer:hover {
+    background: #4a4a4a;
+}
+
+#resizer-y {
+    width: 2px;
+    cursor: col-resize;
+}
+
+#resizer-x {
+    height: 2px;
+    cursor: row-resize;
+}
+
+/* ===== Preview Container ===== */
+.preview-container {
+    flex: 0 0 auto;
+    min-height: 200px; /* 최소 높이 */
+    height: max(200px, calc(100% - var(--timeline-height) - var(--resizer-height)));
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    /* border-bottom 제거, resizer가 대체 */
+}
+
+.preview {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: auto;
+}
+
+.preview-content {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Preview Elements */
+.preview-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    white-space: nowrap;
+    user-select: none;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.preview-text:active {
+    cursor: grabbing;
+}
+
+.preview-rect,
+.preview-circle,
+.preview-triangle,
+.preview-star,
+.preview-heart,
+.preview-hexagon,
+.preview-diamond,
+.preview-pentagon,
+.preview-arrow,
+.preview-speechBubble,
+.preview-cross {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    user-select: none;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.preview-rect:active,
+.preview-circle:active,
+.preview-triangle:active,
+.preview-star:active,
+.preview-heart:active,
+.preview-hexagon:active,
+.preview-diamond:active,
+.preview-pentagon:active,
+.preview-arrow:active,
+.preview-speechBubble:active,
+.preview-cross:active {
+    cursor: grabbing;
+}
+
+.preview-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.preview-image:active {
+    cursor: grabbing;
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.preview-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Transform Controls */
+.transform-controls {
+    z-index: 1000;
+}
+
+.transform-handle:active {
+    cursor: grabbing !important;
+}
+
+
+/* ===== Timeline Area ===== */
+.timeline-area {
+    flex: 0 0 var(--timeline-height);
+    min-height: 200px; /* 최소 높이 */
+    height: var(--timeline-height);
+    display: flex;
+    flex-direction: column;
+    background: #141414;
+    overflow: hidden;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    min-height: 52px;
+}
+
+.timeline-content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.timeline-scroll-container {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.camera-labels-container {
+    width: 120px;
+    background-color: #1a1a1a;
+    border-right: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px; /* 눈금자 높이만큼 여백 추가 */
+    box-sizing: border-box; /* 패딩이 너비/높이에 포함되도록 설정 */
+}
+
+.camera-label-item {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+/* Player controls in timeline header */
+#playPauseBtn,
+#stopBtn {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: none;
+    border-radius: 4px;
+    color: #0d0d0d;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+#playPauseBtn:hover,
+#stopBtn:hover {
+    background: #e8e8e8;
+}
+
+#playPauseBtn:active,
+#stopBtn:active {
+    background: #d8d8d8;
+}
+
+#currentTimeLabel,
+#totalDurationLabel {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #e8e8e8;
+}
+
+#totalDurationLabel {
+    color: #888;
+}
+
+.separator {
+    color: #666;
+    margin: 0 2px;
+}
+
+.timeline-divider {
+    width: 1px;
+    height: 24px;
+    background-color: #2a2a2a;
+    margin: 0 8px;
+}
+
+.timeline-header button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: transparent;
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.timeline-header button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Timeline Mode Switch */
+.timeline-mode-switch {
+    display: flex;
+    gap: 0;
+    background: #2a2a2a;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.timeline-mode-switch .mode-btn {
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.timeline-mode-switch .mode-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #aaa;
+}
+
+.timeline-mode-switch .mode-btn.active {
+    background: #00a8ff;
+    color: #fff;
+}
+
+.timeline-mode-switch .mode-btn.active:hover {
+    background: #0095e0;
+}
+
+/* Override for player buttons */
+.timeline-header #playPauseBtn,
+.timeline-header #stopBtn {
+    padding: 0;
+}
+
+.track-label {
+    margin-left: auto;
+    font-weight: 400;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+}
+
+/* Undo/Redo Controls */
+.undo-redo-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 16px;
+}
+
+.undo-redo-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    background: transparent;
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.undo-redo-controls button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.undo-redo-controls button:disabled {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #555;
+    cursor: not-allowed;
+}
+
+/* Zoom Controls */
+.zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: 16px;
+}
+
+.zoom-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 12px;
+    background: transparent;
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.zoom-controls button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.zoom-level {
+    font-size: 0.85rem;
+    color: #888;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Timeline Ruler */
+.timeline-ruler {
+    position: relative;
+    height: 30px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    overflow-x: hidden;
+    flex-shrink: 0;
+}
+
+.time-marker {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid #2a2a2a;
+    padding-left: 4px;
+    font-size: 0.7rem;
+    color: #888;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+/* Timeline Body */
+.timeline-body {
+    position: relative;
+    flex: 1;
+    overflow: auto;
+    background-color: #141414;
+}
+
+.time-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    pointer-events: auto;
+    cursor: ew-resize;
+    z-index: 100;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 드래그 박스 선택 */
+.selection-box {
+    position: absolute;
+    border: 2px solid #667eea;
+    background-color: rgba(102, 126, 234, 0.15);
+    pointer-events: none;
+    z-index: 50;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.time-indicator::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 100%;
+}
+
+.tracks-container {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.track {
+    position: relative;
+    height: 80px;
+    border-bottom: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+}
+
+.track:nth-child(even) {
+    background-color: #1c1c1c;
+}
+
+/* Camera Timeline Track */
+.camera-timeline-track {
+    height: 100px;
+    border-bottom: 1px solid #2a2a2a;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        rgba(0, 168, 255, 0.03) 50%, 
+        transparent 100%);
+    background-size: 100px 100%;
+    position: relative;
+}
+
+.camera-track-label {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.track-delete-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #888;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.track:hover .track-delete-btn {
+    display: flex;
+}
+
+.track-delete-btn:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.5);
+    color: #ff4444;
+}
+
+/* Clips */
+.clip {
+    position: absolute;
+    top: 10px;
+    height: 60px;
+    background: #2a2a2a;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.clip:hover {
+    border-color: #666;
+    background: #333;
+}
+
+.clip.selected {
+    border-color: #fff;
+    background: #3a3a3a;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.clip-label {
+    font-size: 0.75rem;
+    color: #e8e8e8;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clip-handle-left,
+.clip-handle-right {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: ew-resize;
+    opacity: 0;
+}
+
+.clip-handle-left {
+    left: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.clip-handle-right {
+    right: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.clip:hover .clip-handle-left,
+.clip:hover .clip-handle-right {
+    opacity: 1;
+}
+
+/* Context Menu */
+.context-menu {
+    position: fixed;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    min-width: 160px;
+    z-index: 1000;
+    padding: 4px;
+}
+
+.context-menu-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+    color: #e8e8e8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.context-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.context-menu-item i {
+    width: 16px;
+    color: #888;
+}
+
+.context-menu-divider {
+    height: 1px;
+    background-color: #2a2a2a;
+    margin: 4px 0;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-content p {
+    margin-bottom: 24px;
+    color: #b8b8b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.close-modal {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #0d0d0d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-1px);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* 폰트 선택 드롭다운 - 각 옵션에 실제 폰트 적용 */
+#fontFamily {
+    font-size: 14px;
+}
+
+#fontFamily option[value="Pretendard-Regular"] { font-family: 'Pretendard-Regular'; }
+#fontFamily option[value="Paperlogy-8ExtraBold"] { font-family: 'Paperlogy-8ExtraBold'; }
+#fontFamily option[value="GmarketSansMedium"] { font-family: 'GmarketSansMedium'; }
+#fontFamily option[value="memomentKkukKkuk"] { font-family: 'memomentKkukKkuk'; }
+#fontFamily option[value="NEXON Lv1 Gothic OTF"] { font-family: 'NEXON Lv1 Gothic OTF'; }
+#fontFamily option[value="KoPubDotumMedium"] { font-family: 'KoPubDotumMedium'; }
+#fontFamily option[value="yg-jalnan"] { font-family: 'yg-jalnan'; }
+#fontFamily option[value="SBAggroB"] { font-family: 'SBAggroB'; }
+#fontFamily option[value="S-CoreDream-3Light"] { font-family: 'S-CoreDream-3Light'; }
+#fontFamily option[value="NanumSquare"] { font-family: 'NanumSquare'; }
+#fontFamily option[value="ZEN-SERIF-TTF-Regular"] { font-family: 'ZEN-SERIF-TTF-Regular'; }
+#fontFamily option[value="Noto Sans KR"] { font-family: 'Noto Sans KR'; }
+#fontFamily option[value="PartialSansKR-Regular"] { font-family: 'PartialSansKR-Regular'; }
+#fontFamily option[value="Ownglyph_ParkDaHyun"] { font-family: 'Ownglyph_ParkDaHyun'; }
+#fontFamily option[value="Freesentation-9Black"] { font-family: 'Freesentation-9Black'; }
+#fontFamily option[value="SUIT-Regular"] { font-family: 'SUIT-Regular'; }
+#fontFamily option[value="Cafe24Ssurround"] { font-family: 'Cafe24Ssurround'; }
+#fontFamily option[value="양진체"] { font-family: '양진체'; }
+#fontFamily option[value="ChosunGs"] { font-family: 'ChosunGs'; }
+#fontFamily option[value="GowunDodum-Regular"] { font-family: 'GowunDodum-Regular'; }
+#fontFamily option[value="Nanum Gothic"] { font-family: 'Nanum Gothic'; }
+#fontFamily option[value="HakgyoansimDunggeunmisoTTF-B"] { font-family: 'HakgyoansimDunggeunmisoTTF-B'; }
+#fontFamily option[value="LeeSeoyun"] { font-family: 'LeeSeoyun'; }
+#fontFamily option[value="GongGothicMedium"] { font-family: 'GongGothicMedium'; }
+#fontFamily option[value="Godo"] { font-family: 'Godo'; }
+#fontFamily option[value="GodoMaum"] { font-family: 'GodoMaum'; }
+#fontFamily option[value="SDKukdetopokki"] { font-family: 'SDKukdetopokki'; }
+#fontFamily option[value="SDKukdetopokki-Lt"] { font-family: 'SDKukdetopokki-Lt'; }
+#fontFamily option[value="Iropke Batang"] { font-family: 'Iropke Batang'; }
+#fontFamily option[value="Binggrae"] { font-family: 'Binggrae'; }
+#fontFamily option[value="Binggrae-Bold"] { font-family: 'Binggrae-Bold'; }
+#fontFamily option[value="SejongJaeumiMoeumi-Bold"] { font-family: 'SejongJaeumiMoeumi-Bold'; }
+#fontFamily option[value="NYJGothicEB"] { font-family: 'NYJGothicEB'; }
+#fontFamily option[value="KJD2Beol"] { font-family: 'KJD2Beol'; }
+#fontFamily option[value="HSJandari"] { font-family: 'HSJandari'; }
+#fontFamily option[value="KNPSOdaesan-Regular"] { font-family: 'KNPSOdaesan-Regular'; }
+#fontFamily option[value="NYJDasanB"] { font-family: 'NYJDasanB'; }
+#fontFamily option[value="NYJUnheo"] { font-family: 'NYJUnheo'; }
+#fontFamily option[value="ClipartkoreaTTF-Bold"] { font-family: 'ClipartkoreaTTF-Bold'; }
+#fontFamily option[value="YeolrinMyeongjo-Medium"] { font-family: 'YeolrinMyeongjo-Medium'; }
+#fontFamily option[value="KimjungchulMyungjo-Bold"] { font-family: 'KimjungchulMyungjo-Bold'; }
+#fontFamily option[value="BookkMyungjo-Bd"] { font-family: 'BookkMyungjo-Bd'; }
+#fontFamily option[value="Eulyoo1945-Regular"] { font-family: 'Eulyoo1945-Regular'; }
+#fontFamily option[value="MaruBuri"] { font-family: 'MaruBuri'; }
+#fontFamily option[value="YESMyoungjo-Regular"] { font-family: 'YESMyoungjo-Regular'; }
+#fontFamily option[value="GowunBatang-Regular"] { font-family: 'GowunBatang-Regular'; }
+#fontFamily option[value="SunBatang-Light"] { font-family: 'SunBatang-Light'; }
+#fontFamily option[value="NoonnuBasicGothicRegular"] { font-family: 'NoonnuBasicGothicRegular'; }
+#fontFamily option[value="PyeojinGothic-Bold"] { font-family: 'PyeojinGothic-Bold'; }
+#fontFamily option[value="Wanted Sans"] { font-family: 'Wanted Sans'; }
+#fontFamily option[value="TheJamsil5Bold"] { font-family: 'TheJamsil5Bold'; }
+#fontFamily option[value="SeoulAlrimTTF-Heavy"] { font-family: 'SeoulAlrimTTF-Heavy'; }
+#fontFamily option[value="TillVictoryComes"] { font-family: 'TillVictoryComes'; }
+#fontFamily option[value="KHNPHD"] { font-family: 'KHNPHD'; }
+#fontFamily option[value="KHNPHU"] { font-family: 'KHNPHU'; }
+#fontFamily option[value="둥근모꼴체"] { font-family: '둥근모꼴체'; }
+
+/* 에셋 패널의 폰트 프리뷰 텍스트 크기 조정 */
+.font-preview-text {
+    font-size: 11px;
+    display: block;
+    text-align: center;
+}
+
+/* 타임라인 클립 레이블의 폰트 스타일이 이미 인라인으로 적용됨 */

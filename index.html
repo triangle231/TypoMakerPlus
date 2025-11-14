@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypoMaker+</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+    <!-- External Dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&family=Black+Han+Sans&family=Do+Hyeon&family=Jua&family=Gaegu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Menu Bar -->
+    <header class="top-menu">
+        <div class="logo">
+            <img src="logo.png" alt="TypoMaker+">
+        </div>
+
+        <!-- Export/Import Controls (Icons Only) -->
+        <div class="menu-icon-btn" id="exportEntry" title="내보내기">
+            <i class="fa-solid fa-file-export"></i>
+        </div>
+        <div class="menu-icon-btn" id="importEntry" title="불러오기">
+            <i class="fa-solid fa-file-import"></i>
+        </div>
+    </header>
+
+    <!-- Hidden File Inputs -->
+    <input type="file" id="bgMusicInput" accept="audio/*" style="display: none">
+    <input type="file" id="imageInput" accept="image/*" style="display: none">
+    <input type="file" id="importFileInput" accept=".json" style="display: none">
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Panel (Assets & Layers) -->
+        <aside class="left-panel">
+            <div class="panel-content">
+                <!-- Tab Navigation -->
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="assets">
+                        <i class="fa-solid fa-folder-open"></i>
+                        에셋
+                    </button>
+                    <button class="tab-btn" data-tab="layers">
+                        <i class="fa-solid fa-list"></i>
+                        레이어
+                    </button>
+                    <button class="tab-btn" data-tab="properties">
+                        <i class="fa-solid fa-cog"></i>
+                        속성
+                    </button>
+                </div>
+
+                <!-- Assets Tab -->
+                <div class="tab-content active" id="assetsTab">
+                    <!-- 메인 에셋 뷰 -->
+                    <div id="asset-main-view">
+                        <!-- 도형 섹션 -->
+                        <div class="asset-section">
+                            <div class="asset-section-header">
+                                <h3><i class="fa-solid fa-shapes"></i> 도형</h3>
+                                <button class="more-btn" data-target="shapes-detail-view">더보기 <i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="asset-grid" id="shapeAssetsPreview">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+
+                        <!-- 텍스트 섹션 -->
+                        <div class="asset-section">
+                            <div class="asset-section-header">
+                                <h3><i class="fa-solid fa-font"></i> 텍스트</h3>
+                                <button class="more-btn" data-target="text-detail-view">더보기 <i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="asset-grid text-asset-grid" id="textAssetsPreview">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+
+                        <!-- 이미지 섹션 -->
+                        <div class="asset-section">
+                            <div class="asset-section-header">
+                                <h3>
+                                    <i class="fa-solid fa-image"></i>
+                                    이미지
+                                </h3>
+                                <button class="more-btn" data-target="images-detail-view">더보기 <i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="image-assets" id="imageAssetsPreview">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 상세 뷰 컨테이너 -->
+                    <div id="asset-detail-view" style="display: none;">
+                        <button class="back-btn"><i class="fa-solid fa-chevron-left"></i> 뒤로가기</button>
+                        
+                        <!-- 도형 상세 -->
+                        <div class="asset-detail-content" id="shapes-detail-view">
+                            <h4><i class="fa-solid fa-shapes"></i> 도형</h4>
+                            <div class="asset-grid" id="shapeAssetsFull">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 텍스트 상세 -->
+                        <div class="asset-detail-content" id="text-detail-view">
+                            <h4><i class="fa-solid fa-font"></i> 텍스트</h4>
+                            <div class="asset-grid text-asset-grid" id="textAssetsFull">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+
+                        <!-- 이미지 상세 -->
+                        <div class="asset-detail-content" id="images-detail-view">
+                            <h4><i class="fa-solid fa-image"></i> 이미지</h4>
+                            <div class="image-assets" id="imageAssetsFull">
+                                <!-- JS에서 동적 생성 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layers Tab -->
+                <div class="tab-content" id="layersTab">
+                    <div class="layers-list" id="layersList">
+                        <p class="empty-message">클립이 없습니다</p>
+                    </div>
+                </div>
+
+                <!-- Properties Tab -->
+                <div class="tab-content" id="propertiesTab">
+                    <!-- No Selection Message -->
+                    <div id="noSelectionMessage">
+                        <div class="property-section">
+                            <h3>기본 속성</h3>
+                            <div class="setting-group">
+                                <label>
+                                    <i class="fa-solid fa-fill-drip"></i>
+                                    배경색
+                                </label>
+                                <input type="color" id="previewBgColor" value="#000000">
+                            </div>
+                            <div class="setting-group">
+                                <label>
+                                    <i class="fa-solid fa-music"></i>
+                                    배경음악
+                                </label>
+                                <button class="file-select-btn" id="bgMusicAdd">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                    <span id="bgMusicFileName">파일 선택</span>
+                                </button>
+                            </div>
+                            <div class="setting-group">
+                                <label>
+                                    <i class="fa-solid fa-volume-up"></i>
+                                    볼륨
+                                </label>
+                                <div class="volume-control-container">
+                                    <input type="range" id="bgVolumeControl" min="0" max="1" step="0.01" value="0.5">
+                                    <span class="volume-value">50%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Properties Fields -->
+                    <div id="propertiesFields" style="display: none;">
+                        <!-- Common Properties -->
+                        <div id="commonProperties">
+                            <div class="property-section">
+                                <h3>타이밍</h3>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-clock"></i>
+                                        시작 시간 (초)
+                                    </label>
+                                    <input type="number" id="startTime" step="0.1" min="0">
+                                </div>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-stopwatch"></i>
+                                        종료 시간 (초)
+                                    </label>
+                                    <input type="number" id="endTime" step="0.1" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Properties -->
+                        <div class="text-properties" style="display: none;">
+                            <div class="property-section">
+                                <h3>텍스트</h3>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-align-left"></i>
+                                        내용
+                                    </label>
+                                    <input type="text" id="textContent" placeholder="텍스트를 입력하세요">
+                                </div>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-font"></i>
+                                        글꼴
+                                    </label>
+                                    <select id="fontFamily">
+                                        <option value="Pretendard-Regular" selected>프리텐다드</option>
+                                        <option value="Paperlogy-8ExtraBold">페이퍼로지</option>
+                                        <option value="GmarketSansMedium">G마켓 산스</option>
+                                        <option value="memomentKkukKkuk">메모먼트 꾹꾹체</option>
+                                        <option value="NEXON Lv1 Gothic OTF">넥슨 Lv.1 고딕</option>
+                                        <option value="KoPubDotumMedium">KoPub돋움</option>
+                                        <option value="yg-jalnan">여기어때 잘난체</option>
+                                        <option value="SBAggroB">어그로체</option>
+                                        <option value="S-CoreDream-3Light">에스코어드림</option>
+                                        <option value="NanumSquare">나눔스퀘어</option>
+                                        <option value="ZEN-SERIF-TTF-Regular">ZEN SERIF</option>
+                                        <option value="Noto Sans KR">본고딕 (Noto Sans)</option>
+                                        <option value="PartialSansKR-Regular">파셜산스</option>
+                                        <option value="Ownglyph_ParkDaHyun">온글잎 박다현체</option>
+                                        <option value="Freesentation-9Black">프리젠테이션</option>
+                                        <option value="SUIT-Regular">수트</option>
+                                        <option value="Cafe24Ssurround">카페24 써라운드</option>
+                                        <option value="양진체">양진체</option>
+                                        <option value="ChosunGs">조선궁서체</option>
+                                        <option value="GowunDodum-Regular">고운돋움</option>
+                                        <option value="Nanum Gothic">나눔고딕</option>
+                                        <option value="HakgyoansimDunggeunmisoTTF-B">학교안심 둥근미소</option>
+                                        <option value="LeeSeoyun">이서윤체</option>
+                                        <option value="GongGothicMedium">공고딕</option>
+                                        <option value="Godo">고도체</option>
+                                        <option value="GodoMaum">고도마음체</option>
+                                        <option value="SDKukdetopokki">산돌국대떡볶이</option>
+                                        <option value="SDKukdetopokki-Lt">산돌국대떡볶이 Light</option>
+                                        <option value="Iropke Batang">이롭게 바탕</option>
+                                        <option value="Binggrae">빙그레체</option>
+                                        <option value="Binggrae-Bold">빙그레체 Bold</option>
+                                        <option value="SejongJaeumiMoeumi-Bold">세종재우미모음체</option>
+                                        <option value="NYJGothicEB">남양주고딕 EB</option>
+                                        <option value="KJD2Beol">강진달 2벌식</option>
+                                        <option value="HSJandari">한성잔다리</option>
+                                        <option value="KNPSOdaesan-Regular">경북산오대산체</option>
+                                        <option value="NYJDasanB">남양주다산체 Bold</option>
+                                        <option value="NYJUnheo">남양주운허체</option>
+                                        <option value="ClipartkoreaTTF-Bold">클립아트코리아 Bold</option>
+                                        <option value="YeolrinMyeongjo-Medium">열린명조</option>
+                                        <option value="KimjungchulMyungjo-Bold">김중철명조 Bold</option>
+                                        <option value="BookkMyungjo-Bd">북크명조 Bold</option>
+                                        <option value="Eulyoo1945-Regular">을유1945</option>
+                                        <option value="MaruBuri">마루 부리</option>
+                                        <option value="YESMyoungjo-Regular">예스명조</option>
+                                        <option value="GowunBatang-Regular">고운바탕</option>
+                                        <option value="SunBatang-Light">선바탕 Light</option>
+                                        <option value="NoonnuBasicGothicRegular">눈누기본고딕</option>
+                                        <option value="PyeojinGothic-Bold">편진고딕 Bold</option>
+                                        <option value="Wanted Sans">원티드산스</option>
+                                        <option value="TheJamsil5Bold">더잠실체 Bold</option>
+                                        <option value="SeoulAlrimTTF-Heavy">서울알림체</option>
+                                        <option value="TillVictoryComes">승리체</option>
+                                        <option value="KHNPHD">한수원 한돋움체</option>
+                                        <option value="KHNPHU">한수원 한울림체</option>
+                                        <option value="둥근모꼴체">둥근모꼴체</option>
+                                    </select>
+                                </div>
+                                <div class="setting-group">
+                                    <label>글꼴 크기</label>
+                                    <input type="number" id="fontSize" min="8" max="200" value="32">
+                                </div>
+                                <div class="setting-group">
+                                    <label>스타일</label>
+                                    <div class="style-buttons">
+                                        <button class="style-toggle" id="boldBtn" title="굵게">
+                                            <i class="fa-solid fa-bold"></i>
+                                        </button>
+                                        <button class="style-toggle" id="italicBtn" title="기울임">
+                                            <i class="fa-solid fa-italic"></i>
+                                        </button>
+                                        <button class="style-toggle" id="underlineBtn" title="밑줄">
+                                            <i class="fa-solid fa-underline"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-palette"></i>
+                                        텍스트 색상
+                                    </label>
+                                    <input type="color" id="textColor" value="#ffffff">
+                                </div>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-fill-drip"></i>
+                                        배경 색상
+                                    </label>
+                                    <div class="color-with-alpha">
+                                        <input type="color" id="bgColor" value="#000000">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="bgTransparent" checked>
+                                            투명
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shape Properties -->
+                        <div class="shape-properties" style="display: none;">
+                            <div class="property-section">
+                                <h3>도형</h3>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-palette"></i>
+                                        색상
+                                    </label>
+                                    <input type="color" id="shapeColor" value="#FF0000">
+                                </div>
+                                <div class="setting-group">
+                                    <label>크기</label>
+                                    <input type="number" id="shapeSize" min="10" max="500" value="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Properties -->
+                        <div class="image-properties" style="display: none;">
+                            <div class="property-section">
+                                <h3>이미지</h3>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-image"></i>
+                                        파일명
+                                    </label>
+                                    <input type="text" id="imageName" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fill Properties -->
+                        <div class="fill-properties" style="display: none;">
+                            <div class="property-section">
+                                <h3>배경 채우기</h3>
+                                <div class="setting-group">
+                                    <label>
+                                        <i class="fa-solid fa-fill-drip"></i>
+                                        색상
+                                    </label>
+                                    <input type="color" id="fillColor" value="#ffffff">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transform Properties -->
+                        <div class="transform-properties">
+                            <div class="property-section">
+                                <h3>애니메이션</h3>
+
+                                <!-- X Position Animation -->
+                                <div class="anim-group">
+                                    <div class="anim-header">
+                                        <label class="anim-label">
+                                            <i class="fa-solid fa-arrows-alt-h"></i>
+                                            X 위치
+                                        </label>
+                                        <select id="posXEasing" class="anim-easing-header">
+                                            <option value="linear">Linear</option>
+                                            <option value="easeIn">Ease In</option>
+                                            <option value="easeOut">Ease Out</option>
+                                            <option value="easeInOut" selected>Ease In-Out</option>
+                                        </select>
+                                    </div>
+                                    <canvas class="anim-graph" id="posXGraph" width="280" height="100"></canvas>
+                                    <div class="anim-controls">
+                                        <input type="number" id="posXStart" step="1" placeholder="시작" class="anim-input">
+                                        <span class="anim-arrow">→</span>
+                                        <input type="number" id="posXEnd" step="1" placeholder="끝" class="anim-input">
+                                    </div>
+                                </div>
+
+                                <!-- Y Position Animation -->
+                                <div class="anim-group">
+                                    <div class="anim-header">
+                                        <label class="anim-label">
+                                            <i class="fa-solid fa-arrows-alt-v"></i>
+                                            Y 위치
+                                        </label>
+                                        <select id="posYEasing" class="anim-easing-header">
+                                            <option value="linear">Linear</option>
+                                            <option value="easeIn">Ease In</option>
+                                            <option value="easeOut">Ease Out</option>
+                                            <option value="easeInOut" selected>Ease In-Out</option>
+                                        </select>
+                                    </div>
+                                    <canvas class="anim-graph" id="posYGraph" width="280" height="100"></canvas>
+                                    <div class="anim-controls">
+                                        <input type="number" id="posYStart" step="1" placeholder="시작" class="anim-input">
+                                        <span class="anim-arrow">→</span>
+                                        <input type="number" id="posYEnd" step="1" placeholder="끝" class="anim-input">
+                                    </div>
+                                </div>
+
+                                <!-- Scale Animation -->
+                                <div class="anim-group">
+                                    <div class="anim-header">
+                                        <label class="anim-label">
+                                            <i class="fa-solid fa-expand-arrows-alt"></i>
+                                            크기 (%)
+                                        </label>
+                                        <select id="scaleEasing" class="anim-easing-header">
+                                            <option value="linear">Linear</option>
+                                            <option value="easeIn">Ease In</option>
+                                            <option value="easeOut">Ease Out</option>
+                                            <option value="easeInOut" selected>Ease In-Out</option>
+                                        </select>
+                                    </div>
+                                    <canvas class="anim-graph" id="scaleGraph" width="280" height="100"></canvas>
+                                    <div class="anim-controls">
+                                        <input type="number" id="scaleStart" step="1" min="0" max="500" placeholder="시작" class="anim-input">
+                                        <span class="anim-arrow">→</span>
+                                        <input type="number" id="scaleEnd" step="1" min="0" max="500" placeholder="끝" class="anim-input">
+                                    </div>
+                                </div>
+
+                                <!-- Rotation Animation -->
+                                <div class="anim-group">
+                                    <div class="anim-header">
+                                        <label class="anim-label">
+                                            <i class="fa-solid fa-sync-alt"></i>
+                                            회전 (도)
+                                        </label>
+                                        <select id="rotationEasing" class="anim-easing-header">
+                                            <option value="linear">Linear</option>
+                                            <option value="easeIn">Ease In</option>
+                                            <option value="easeOut">Ease Out</option>
+                                            <option value="easeInOut" selected>Ease In-Out</option>
+                                        </select>
+                                    </div>
+                                    <canvas class="anim-graph" id="rotationGraph" width="280" height="100"></canvas>
+                                    <div class="anim-controls">
+                                        <input type="number" id="rotationStart" step="1" placeholder="시작" class="anim-input">
+                                        <span class="anim-arrow">→</span>
+                                        <input type="number" id="rotationEnd" step="1" placeholder="끝" class="anim-input">
+                                    </div>
+                                </div>
+
+                                <!-- Opacity Animation -->
+                                <div class="anim-group">
+                                    <div class="anim-header">
+                                        <label class="anim-label">
+                                            <i class="fa-solid fa-eye-slash"></i>
+                                            투명도 (%)
+                                        </label>
+                                        <select id="opacityEasing" class="anim-easing-header">
+                                            <option value="linear">Linear</option>
+                                            <option value="easeIn">Ease In</option>
+                                            <option value="easeOut">Ease Out</option>
+                                            <option value="easeInOut" selected>Ease In-Out</option>
+                                        </select>
+                                    </div>
+                                    <canvas class="anim-graph" id="opacityGraph" width="280" height="100"></canvas>
+                                    <div class="anim-controls">
+                                        <input type="number" id="opacityStart" step="1" min="0" max="100" placeholder="시작" class="anim-input">
+                                        <span class="anim-arrow">→</span>
+                                        <input type="number" id="opacityEnd" step="1" min="0" max="100" placeholder="끝" class="anim-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Vertical Resizer -->
+        <div class="resizer" id="resizer-y"></div>
+
+        <!-- Center Area (Preview + Timeline) -->
+        <div class="center-area">
+            <!-- Preview Section -->
+            <section class="preview-container">
+                <div class="preview">
+                    <div class="preview-content" id="previewContent">
+                        <!-- Preview content will be dynamically generated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Horizontal Resizer -->
+            <div class="resizer" id="resizer-x"></div>
+
+            <!-- Timeline Section -->
+            <section class="timeline-area">
+                <!-- Timeline Header -->
+                <div class="timeline-header">
+                    <!-- Player Controls -->
+                    <button id="playPauseBtn" title="재생/일시정지 (Space)">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="stopBtn" title="정지">
+                        <i class="fa-solid fa-stop"></i>
+                    </button>
+                    <span id="currentTimeLabel">0.00s</span>
+                    <span class="separator">/</span>
+                    <span id="totalDurationLabel">30.00s</span>
+
+                    <div class="timeline-divider"></div>
+
+                    <div class="undo-redo-controls">
+                        <button id="undoBtn" title="실행 취소 (Ctrl+Z)">
+                            <i class="fa-solid fa-undo"></i>
+                        </button>
+                        <button id="redoBtn" title="다시 실행 (Ctrl+Y)">
+                            <i class="fa-solid fa-redo"></i>
+                        </button>
+                    </div>
+
+                    <div class="zoom-controls">
+                        <button id="zoomOutBtn" title="축소">
+                            <i class="fa-solid fa-search-minus"></i>
+                        </button>
+                        <span class="zoom-level">100%</span>
+                        <button id="zoomInBtn" title="확대">
+                            <i class="fa-solid fa-search-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="timeline-mode-switch">
+                        <button class="mode-btn active" data-mode="clip" title="클립 모드">
+                            <i class="fa-solid fa-film"></i>
+                            클립
+                        </button>
+                        <button class="mode-btn" data-mode="camera" title="카메라 모드">
+                            <i class="fa-solid fa-video"></i>
+                            카메라
+                        </button>
+                    </div>
+
+                    <button id="addTrackBtn" title="새 트랙 추가">
+                        <i class="fa-solid fa-plus"></i>
+                        트랙 추가
+                    </button>
+                </div>
+                
+                <div class="timeline-content-wrapper">
+                    <!-- Camera Track Labels -->
+                    <div class="camera-labels-container" id="cameraLabelsContainer" style="display: none;">
+                        <!-- JS에서 동적 생성 -->
+                    </div>
+
+                    <div class="timeline-scroll-container">
+                        <!-- Timeline Ruler -->
+                        <div class="timeline-ruler" id="timelineRuler">
+                            <!-- Time markers will be dynamically generated -->
+                        </div>
+
+                        <!-- Timeline Body -->
+                        <div class="timeline-body" id="timelineBody">
+                            <!-- Time Indicator -->
+                            <div id="timeIndicator" class="time-indicator"></div>
+
+                            <!-- Tracks will be dynamically generated -->
+                            <div class="tracks-container" id="tracksContainer">
+                                <!-- Default tracks (3개) -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Track Context Menu -->
+    <div class="context-menu" id="trackContextMenu" style="display: none;">
+        <div class="context-menu-item" data-action="pasteClip">
+            <i class="fa-solid fa-paste"></i>
+            클립 붙여넣기
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="addTrackAbove">
+            <i class="fa-solid fa-arrow-up"></i>
+            위에 트랙 추가
+        </div>
+        <div class="context-menu-item" data-action="addTrackBelow">
+            <i class="fa-solid fa-arrow-down"></i>
+            아래에 트랙 추가
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="duplicate">
+            <i class="fa-solid fa-copy"></i>
+            트랙 복제
+        </div>
+        <div class="context-menu-item" data-action="copyTrack">
+            <i class="fa-solid fa-clone"></i>
+            트랙 복사
+        </div>
+        <div class="context-menu-item" data-action="pasteTrack">
+            <i class="fa-solid fa-paste"></i>
+            트랙 붙여넣기
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="delete">
+            <i class="fa-solid fa-trash"></i>
+            트랙 삭제
+        </div>
+    </div>
+
+    <!-- Clip Context Menu -->
+    <div class="context-menu" id="clipContextMenu" style="display: none;">
+        <div class="context-menu-item" data-action="copy">
+            <i class="fa-solid fa-copy"></i>
+            복사
+        </div>
+        <div class="context-menu-item" data-action="cut">
+            <i class="fa-solid fa-scissors"></i>
+            잘라내기
+        </div>
+        <div class="context-menu-item" data-action="paste">
+            <i class="fa-solid fa-paste"></i>
+            붙여넣기
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="duplicate">
+            <i class="fa-solid fa-clone"></i>
+            복제
+        </div>
+        <div class="context-menu-item" data-action="toggleVisibility">
+            <i class="fa-solid fa-eye"></i>
+            <span class="visibility-text">숨기기</span>
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="delete">
+            <i class="fa-solid fa-trash"></i>
+            삭제
+        </div>
+    </div>
+
+    <!-- Layer Context Menu -->
+    <div class="context-menu" id="layerContextMenu" style="display: none;">
+        <div class="context-menu-item" data-action="copy">
+            <i class="fa-solid fa-copy"></i>
+            복사
+        </div>
+        <div class="context-menu-item" data-action="cut">
+            <i class="fa-solid fa-scissors"></i>
+            잘라내기
+        </div>
+        <div class="context-menu-item" data-action="toggleVisibility">
+            <i class="fa-solid fa-eye"></i>
+            <span class="visibility-text">숨기기</span>
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="delete">
+            <i class="fa-solid fa-trash"></i>
+            삭제
+        </div>
+    </div>
+
+    <!-- Camera Track Context Menu (빈 곳 클릭) -->
+    <div class="context-menu" id="cameraTrackContextMenu" style="display: none;">
+        <div class="context-menu-item" data-action="addKeyframeLinear">
+            <i class="fa-solid fa-minus"></i>
+            Linear 키프레임 추가
+        </div>
+        <div class="context-menu-item" data-action="addKeyframeEaseIn">
+            <i class="fa-solid fa-arrow-right"></i>
+            Ease In 키프레임 추가
+        </div>
+        <div class="context-menu-item" data-action="addKeyframeEaseOut">
+            <i class="fa-solid fa-arrow-left"></i>
+            Ease Out 키프레임 추가
+        </div>
+        <div class="context-menu-item" data-action="addKeyframeEaseInOut">
+            <i class="fa-solid fa-arrows-left-right"></i>
+            Ease In-Out 키프레임 추가
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="pasteKeyframe">
+            <i class="fa-solid fa-paste"></i>
+            붙여넣기
+        </div>
+    </div>
+
+    <!-- Camera Keyframe Context Menu -->
+    <div class="context-menu" id="cameraKeyframeContextMenu" style="display: none;">
+        <div class="context-menu-item" data-action="copyKeyframe">
+            <i class="fa-solid fa-copy"></i>
+            복사
+        </div>
+        <div class="context-menu-divider"></div>
+        <div class="context-menu-item" data-action="deleteKeyframe">
+            <i class="fa-solid fa-trash"></i>
+            삭제
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>프로젝트 내보내기</h2>
+            <p>프로젝트를 저장할 형식을 선택하세요.</p>
+            <div class="modal-buttons">
+                <button id="downloadProjectBtn">
+                    <i class="fa-solid fa-download"></i>
+                    JSON 다운로드
+                </button>
+                <button id="downloadEntBtn">
+                    <i class="fa-solid fa-file-export"></i>
+                    ENT 파일로 내보내기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div id="importModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal import-close">&times;</span>
+            <h2>프로젝트 불러오기</h2>
+            <p>JSON 프로젝트 파일을 선택하세요.</p>
+            <div class="modal-buttons">
+                <button id="selectFileBtn">
+                    <i class="fa-solid fa-folder-open"></i>
+                    파일 선택
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Libraries for ENT export -->
+    <script src="https://rawcdn.githack.com/ankitrohatgi/tarballjs/refs/heads/master/tarball.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="js/components/Timeline.js"></script>
+    <script src="js/components/PreviewSystem.js"></script>
+    <script src="js/components/AnimationGraph.js"></script>
+    <script src="js/components/PropertiesPanel.js"></script>
+    <script src="js/components/LeftPanel.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+    <!-- 폰트 선택 드롭다운에 폰트 미리보기 적용 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fontFamilySelect = document.getElementById('fontFamily');
+
+            if (fontFamilySelect) {
+                // 선택된 폰트로 드롭다운 자체의 폰트도 변경
+                function updateSelectFont() {
+                    const selectedFont = fontFamilySelect.value;
+                    fontFamilySelect.style.fontFamily = selectedFont;
+                }
+
+                // 초기 설정
+                updateSelectFont();
+
+                // 선택 변경 시 업데이트
+                fontFamilySelect.addEventListener('change', updateSelectFont);
+            }
+        });
+    </script>
+</body>
+</html>
